@@ -1,0 +1,25 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <!-- 
+      To make each product name a link to product details, add the <a> element 
+      around {{ product.name }}. 
+    -->
+    <a [title]="product.name + ' details'"></a>
+    {{ product.name }}
+  </h3>
+    <!-- 
+      On a <p> element, use an *ngIf directive so that Angular only creates the 
+      <p> element if the current product has a description. 
+    -->
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <!-- Event binding uses a set of parentheses, ( ), around the event, as in the 
+  (click) event on the <button> element. -->
+  <button type="button" (click)="share()">
+    Share
+  </button>
+</div>
