@@ -6,8 +6,12 @@
       To make each product name a link to product details, 
       add the <a> element around {{ product.name }}. 
     -->
-    <a [title]="product.name + ' details'"></a>
-    {{ product.name }}
+    <a 
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
+      {{ product.name }}
+    </a>
   </h3>
     <!-- 
       On a <p> element, use an *ngIf directive so that Angular only creates the 
