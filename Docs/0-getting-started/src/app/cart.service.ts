@@ -28,6 +28,6 @@ export class CartService {
   // - The clearCart() method returns an empty array of items, which empties the cart
 
   getShippingPrices() {
-    return this.http.get<{ type: string, price: number }>('/assets/shipping.json')
+    return this.http.get<{ type: string, price: number }[]>('/assets/shipping.json')
   }
 }
